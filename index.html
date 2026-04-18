@@ -792,6 +792,165 @@
     }
 
     /* ═══════════════════════════════════════════════════
+       BOOK CARD
+    ═══════════════════════════════════════════════════ */
+    .book-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: linear-gradient(135deg, var(--brand-light) 0%, var(--bg-alt) 100%);
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--r-lg);
+      padding: 24px 28px;
+      transition: box-shadow var(--duration), transform var(--duration);
+    }
+    .book-card:hover {
+      box-shadow: var(--shadow-brand);
+      transform: translateY(-3px);
+    }
+    .book-cover {
+      width: 72px; height: 88px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(145deg, var(--brand) 0%, var(--brand-darker) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-md);
+    }
+    .book-info { flex: 1; }
+    .book-badge {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--brand);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: var(--r-full);
+      margin-bottom: 8px;
+    }
+    .book-info h4 {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+    .book-info p {
+      font-size: .84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .book-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .book-meta span {
+      font-size: .76rem;
+      color: var(--text-faint);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .book-meta i { color: var(--brand-dark); }
+    .book-dl-btn { flex-shrink: 0; }
+
+    @media (max-width: 640px) {
+      .book-card { flex-direction: column; align-items: flex-start; }
+      .book-dl-btn { width: 100%; justify-content: center; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       MNEMONIC CAROUSEL
+    ═══════════════════════════════════════════════════ */
+    .mnem-carousel {
+      position: relative;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      user-select: none;
+    }
+    .mnem-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .mnem-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .mnem-slide img {
+      max-height: 340px;
+      width: auto;
+      max-width: 100%;
+      border-radius: var(--r-sm);
+      object-fit: contain;
+      box-shadow: var(--shadow-md);
+      transition: transform .4s var(--ease);
+    }
+    .mnem-slide img:hover { transform: scale(1.02); }
+
+    /* Nav buttons */
+    .mnem-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--duration) var(--ease);
+      z-index: 2;
+      cursor: pointer;
+    }
+    .mnem-btn:hover {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
+      box-shadow: var(--shadow-brand);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .mnem-prev { left: 12px; }
+    .mnem-next { right: 12px; }
+    .mnem-btn:disabled { opacity: .35; pointer-events: none; }
+
+    /* Dots */
+    .mnem-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 0 14px;
+      background: var(--bg-alt);
+    }
+    .mnem-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: var(--border-strong);
+      cursor: pointer;
+      transition: background var(--duration), transform var(--duration), width var(--duration);
+      padding: 0;
+    }
+    .mnem-dot.active {
+      background: var(--brand);
+      width: 22px;
+      border-radius: 4px;
+    }
+
+    /* ═══════════════════════════════════════════════════
        WHY
     ═══════════════════════════════════════════════════ */
     #why { padding: 100px 0; background: var(--bg); }
@@ -1177,7 +1336,6 @@
     <a href="#content">Content</a>
     <a href="#why">Why Us</a>
     <a href="#testimonials">Reviews</a>
-    <a href="#newsletter">Newsletter</a>
     <a href="#cta">Follow Us</a>
   </nav>
 </header>
@@ -1210,7 +1368,7 @@
           simplified, structured, and always at your fingertips.
         </p>
         <div class="hero-cta sr">
-          <a href="https://open.spotify.com/show/your-show-id" target="_blank" rel="noopener" class="btn btn-brand">
+          <a href="https://open.spotify.com/show/3dDzaR3h1OLL0jsz7pV1KM?si=df6635f30d864447" target="_blank" rel="noopener" class="btn btn-brand">
             <i class="fab fa-spotify"></i> Listen to Podcasts
           </a>
           <a href="#content" class="btn btn-ghost">
@@ -1361,7 +1519,7 @@
       </a>
 
       <!-- Spotify -->
-      <a href="https://open.spotify.com/show/your-show-id" target="_blank" rel="noopener"
+      <a href="https://open.spotify.com/show/3dDzaR3h1OLL0jsz7pV1KM?si=df6635f30d864447" target="_blank" rel="noopener"
          class="platform-card p-spotify sr">
         <div class="p-icon-wrap"><i class="fab fa-spotify"></i></div>
         <div class="p-name">Spotify</div>
@@ -1426,10 +1584,11 @@
 
     <div class="content-grid">
 
+      <!-- 1. Podcasts -->
       <div class="ct-card sr">
         <div class="ct-icon" style="background:#eaf3fb;">🎙️</div>
         <div>
-          <h3>Surgical Podcasts</h3>
+          <h3>Podcasts</h3>
           <p>Deep-dive audio episodes covering General Surgery and Plastic Surgery in a conversational, clinically grounded style. Ideal for commutes, post-call wind-downs, and long study sessions.</p>
           <div class="ct-tags">
             <span class="ct-tag">General Surgery</span>
@@ -1439,42 +1598,133 @@
         </div>
       </div>
 
+      <!-- 2. S.W.A.B Videos -->
       <div class="ct-card sr">
-        <div class="ct-icon" style="background:#edfbf3;">⚡</div>
+        <div class="ct-icon" style="background:#fff4eb;">👁️</div>
         <div>
-          <h3>Concept Bites</h3>
-          <p>Micro-format videos (under 60 seconds) that zero in on the single most important idea in each surgical concept. Engineered for Instagram and pre-exam sprint revision.</p>
+          <h3>S.W.A.B Videos</h3>
+          <p>Surgery Within A Blink. Micro-format videos (under 60 seconds) that zero in on the single most important idea in each surgical concept. Engineered for Instagram and pre-exam sprint revision.</p>
           <div class="ct-tags">
-            <span class="ct-tag">Reels</span>
-            <span class="ct-tag">High-Yield</span>
-            <span class="ct-tag">Visual Learning</span>
+            <span class="ct-tag">Under 60s</span>
+            <span class="ct-tag">Instagram</span>
+            <span class="ct-tag">Sprint Revision</span>
           </div>
         </div>
       </div>
 
-      <div class="ct-card sr">
-        <div class="ct-icon" style="background:#fef3fb;">🔁</div>
-        <div>
-          <h3>Revision Shorts</h3>
-          <p>Rapid-fire revision content — mnemonics, flowcharts, surgical classifications, and scorable facts distilled into scannable, memorable cards and videos.</p>
-          <div class="ct-tags">
-            <span class="ct-tag">Mnemonics</span>
-            <span class="ct-tag">Flowcharts</span>
-            <span class="ct-tag">Classifications</span>
+      <!-- 3. Concept Bites (with carousel) -->
+      <div class="ct-card sr" style="flex-direction: column; align-items: stretch; gap: 18px;">
+        <div style="display:flex; gap:22px; align-items:flex-start;">
+          <div class="ct-icon" style="background:#edfbf3; flex-shrink:0;">⚡</div>
+          <div>
+            <h3>Concept Bites</h3>
+            <p>Rapid-fire revision content — flowcharts, surgical classifications, and scorable facts distilled into scannable, memorable cards.</p>
+            <div class="ct-tags">
+              <span class="ct-tag">Flowcharts</span>
+              <span class="ct-tag">Classifications</span>
+              <span class="ct-tag">High-Yield</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concept Bites Carousel -->
+        <div class="mnem-carousel" id="cbCarousel">
+          <div class="mnem-track" id="cbTrack">
+            <div class="mnem-slide"><img src="page 1.png" alt="Concept Bite 1" /></div>
+            <div class="mnem-slide"><img src="page 2.png" alt="Concept Bite 2" /></div>
+            <div class="mnem-slide"><img src="page 3.png" alt="Concept Bite 3" /></div>
+            <div class="mnem-slide"><img src="page 4.png" alt="Concept Bite 4" /></div>
+            <div class="mnem-slide"><img src="page 5.png" alt="Concept Bite 5" /></div>
+            <div class="mnem-slide"><img src="page 6.png" alt="Concept Bite 6" /></div>
+            <div class="mnem-slide"><img src="page 7.png" alt="Concept Bite 7" /></div>
+            <div class="mnem-slide"><img src="page 8.png" alt="Concept Bite 8" /></div>
+            <div class="mnem-slide"><img src="page 9.png" alt="Concept Bite 9" /></div>
+          </div>
+          <button class="mnem-btn mnem-prev" id="cbPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+          <button class="mnem-btn mnem-next" id="cbNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+          <div class="mnem-dots" id="cbDots">
+            <button class="mnem-dot active" data-idx="0"></button>
+            <button class="mnem-dot" data-idx="1"></button>
+            <button class="mnem-dot" data-idx="2"></button>
+            <button class="mnem-dot" data-idx="3"></button>
+            <button class="mnem-dot" data-idx="4"></button>
+            <button class="mnem-dot" data-idx="5"></button>
+            <button class="mnem-dot" data-idx="6"></button>
+            <button class="mnem-dot" data-idx="7"></button>
+            <button class="mnem-dot" data-idx="8"></button>
           </div>
         </div>
       </div>
 
-      <div class="ct-card sr">
-        <div class="ct-icon" style="background:#fefaeb;">📄</div>
-        <div>
-          <h3>PDFs & Notes</h3>
-          <p>Beautifully structured, exam-ready PDF notes covering complete surgery topics. Download from Telegram, print, and annotate — your last-day companion before any viva or theory.</p>
-          <div class="ct-tags">
-            <span class="ct-tag">Printable</span>
-            <span class="ct-tag">Exam-Focused</span>
-            <span class="ct-tag">Free Download</span>
+      <!-- 4. Mnemonics (with carousel) -->
+      <div class="ct-card sr" style="flex-direction: column; align-items: stretch; gap: 18px;">
+        <div style="display:flex; gap:22px; align-items:flex-start;">
+          <div class="ct-icon" style="background:#fef3fb; flex-shrink:0;">🧠</div>
+          <div>
+            <h3>Mnemonics</h3>
+            <p>Easy to understand and memorable mnemonics that make even the most complex surgical facts stick — because the best answer is the one you actually remember.</p>
+            <div class="ct-tags">
+              <span class="ct-tag">Memory Aids</span>
+              <span class="ct-tag">Exam-Ready</span>
+              <span class="ct-tag">Quick Recall</span>
+            </div>
           </div>
+        </div>
+
+        <!-- Mnemonics Carousel -->
+        <div class="mnem-carousel" id="mnemCarousel">
+          <div class="mnem-track" id="mnemTrack">
+            <div class="mnem-slide"><img src="1.png" alt="Mnemonic 1" /></div>
+            <div class="mnem-slide"><img src="2.png" alt="Mnemonic 2" /></div>
+            <div class="mnem-slide"><img src="3.png" alt="Mnemonic 3" /></div>
+            <div class="mnem-slide"><img src="4.png" alt="Mnemonic 4" /></div>
+            <div class="mnem-slide"><img src="5.png" alt="Mnemonic 5" /></div>
+          </div>
+          <button class="mnem-btn mnem-prev" id="mnemPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+          <button class="mnem-btn mnem-next" id="mnemNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+          <div class="mnem-dots" id="mnemDots">
+            <button class="mnem-dot active" data-idx="0"></button>
+            <button class="mnem-dot" data-idx="1"></button>
+            <button class="mnem-dot" data-idx="2"></button>
+            <button class="mnem-dot" data-idx="3"></button>
+            <button class="mnem-dot" data-idx="4"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. PDFs & Notes -->
+      <div class="ct-card sr" style="grid-column: 1 / -1; flex-direction: column; align-items: stretch; gap: 24px;">
+        <div style="display:flex; gap:22px; align-items:flex-start;">
+          <div class="ct-icon" style="background:#fefaeb; flex-shrink:0;">📄</div>
+          <div>
+            <h3>PDFs & Notes</h3>
+            <p>Beautifully structured, exam-ready PDF notes covering complete surgery topics. Download from Telegram, print, and annotate — your last-day companion before any viva or theory.</p>
+            <div class="ct-tags">
+              <span class="ct-tag">Printable</span>
+              <span class="ct-tag">Exam-Focused</span>
+              <span class="ct-tag">Free Download</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book card -->
+        <div class="book-card">
+          <div class="book-cover">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="book-info">
+            <div class="book-badge">New Release</div>
+            <h4>PYQs in Plastic Surgery</h4>
+            <p>Last 10 years of theory exam questions sorted chapter-wise — the definitive revision companion for every MCh Plastic Surgery aspirant.</p>
+            <div class="book-meta">
+              <span><i class="fas fa-user-md"></i> Dr. Vasu Pottabatthini</span>
+              <span><i class="fas fa-layer-group"></i> Chapter-wise</span>
+              <span><i class="fas fa-calendar-alt"></i> 10 Years PYQs</span>
+            </div>
+          </div>
+          <a href="PYQs in Plastic Surgery.pdf" download class="btn btn-brand book-dl-btn">
+            <i class="fas fa-download"></i> Download Free
+          </a>
         </div>
       </div>
 
@@ -1626,23 +1876,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     NEWSLETTER
-═══════════════════════════════════════════════════ -->
-<section id="newsletter">
-  <div class="container">
-    <div class="newsletter-box sr">
-      <span class="section-eyebrow" style="background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.25);">Stay Updated</span>
-      <h2>Surgical Wisdom, Straight to Your Inbox</h2>
-      <p>New podcasts, concept bites, PDF releases, and exam tips — delivered weekly. Join 10,000+ learners.</p>
-      <form class="nl-form" onsubmit="handleSubscribe(event)">
-        <input class="nl-input" type="email" placeholder="your@email.com" required autocomplete="email" />
-        <button class="nl-btn" type="submit">Subscribe Free</button>
-      </form>
-      <p class="nl-note">No spam, ever. Unsubscribe anytime. 🔒 Your email is safe.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════════════
      CTA
@@ -1744,7 +1977,6 @@
 
     <div class="footer-bottom">
       <p>© 2025 SnazzySurgeon. All rights reserved. | Dr. Vasu Pottabatthini, MS, M.Ch (Plastic Surgery)</p>
-      <p class="footer-tagline">Simplifying Surgery, One Concept at a Time</p>
     </div>
   </div>
 </footer>
@@ -1840,8 +2072,45 @@
   }, { threshold: 0.5 });
   sections.forEach(s => navObserver.observe(s));
 
-  /* ── Ticker: typing headline effect (optional) ── */
-  // The hero headline is purely CSS — no JS needed.
+  /* ── Carousels ───────────────────────────────────── */
+  function initCarousel(carouselId, trackId, prevId, nextId, dotsSelector, total) {
+    const carousel = document.getElementById(carouselId);
+    const track    = document.getElementById(trackId);
+    const prev     = document.getElementById(prevId);
+    const next     = document.getElementById(nextId);
+    const dots     = carousel.querySelectorAll(dotsSelector);
+    let current    = 0;
+    let autoTimer;
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    prev.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+    next.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.idx); startAuto(); }));
+
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); startAuto(); }
+    });
+
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', startAuto);
+    startAuto();
+  }
+
+  initCarousel('cbCarousel',   'cbTrack',   'cbPrev',   'cbNext',   '.mnem-dot', 9);
+  initCarousel('mnemCarousel', 'mnemTrack', 'mnemPrev', 'mnemNext', '.mnem-dot', 5);
 </script>
 
 </body>
