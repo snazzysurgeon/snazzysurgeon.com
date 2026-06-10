@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — SnazzySurgeon</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.7;
+        }
+        header {
+            background: #1c1c1e;
+            color: #fff;
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            margin-top: 8px;
+            color: #aeaeb2;
+            font-size: 0.95rem;
+        }
+        main {
+            max-width: 760px;
+            margin: 40px auto;
+            padding: 0 24px 80px;
+        }
+        section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #1d1d1f;
+        }
+        p { margin-bottom: 12px; color: #3a3a3c; font-size: 0.97rem; }
+        p:last-child { margin-bottom: 0; }
+        ul { padding-left: 20px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; color: #3a3a3c; font-size: 0.97rem; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+        th {
+            background: #f2f2f7;
+            text-align: left;
+            padding: 10px 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e5ea;
+        }
+        td { padding: 10px 14px; border-bottom: 1px solid #f2f2f7; vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        .badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .badge.no { background: #fce4ec; color: #c62828; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            color: #8e8e93;
+            font-size: 0.82rem;
+            padding: 32px 24px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SnazzySurgeon</h1>
+    <p>Privacy Policy &nbsp;·&nbsp; Effective date: 10 June 2026</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Overview</h2>
+        <p>SnazzySurgeon ("we", "our", "the app") is a surgical exam preparation app for medical students and surgical trainees. This policy explains what personal data we collect, why we collect it, and how it is used.</p>
+        <p>We do <strong>not</strong> sell your data, use it for advertising, or share it with data brokers.</p>
+    </section>
+
+    <section>
+        <h2>Data We Collect</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Purpose</th>
+                    <th>Linked to You</th>
+                    <th>Used for Tracking</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Display name</strong></td>
+                    <td>Personalise your in-app profile</td>
+                    <td><span class="badge">Yes</span></td>
+                    <td><span class="badge no">No</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Email address</strong></td>
+                    <td>Account creation and sign-in</td>
+                    <td><span class="badge">Yes</span></td>
+                    <td><span class="badge no">No</span></td>
+                </tr>
+                <tr>
+                    <td><strong>User ID</strong></td>
+                    <td>Identify your account and sync progress across devices</td>
+                    <td><span class="badge">Yes</span></td>
+                    <td><span class="badge no">No</span></td>
+                </tr>
+                <tr>
+                    <td><strong>MCQ performance data</strong><br><em>(scores, streaks, review intervals)</em></td>
+                    <td>Power spaced-repetition scheduling and progress statistics</td>
+                    <td><span class="badge">Yes</span></td>
+                    <td><span class="badge no">No</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>How We Use Your Data</h2>
+        <p>All data is used exclusively to provide and improve the core app experience:</p>
+        <ul>
+            <li>Authenticate your account (Sign in with Apple, Google, or email/password)</li>
+            <li>Sync your question banks, decks, and progress across your devices via iCloud/CloudKit</li>
+            <li>Schedule question reviews using the SM-2 spaced-repetition algorithm</li>
+            <li>Display your performance statistics and streaks</li>
+        </ul>
+        <p>We do not use your data for advertising, analytics profiling, or cross-app tracking.</p>
+    </section>
+
+    <section>
+        <h2>Data Storage &amp; Security</h2>
+        <p><strong>On-device:</strong> Question banks, decks, and progress are stored locally in Core Data. Your preferences are stored in UserDefaults for app-specific configuration and session state.</p>
+        <p><strong>Cloud sync:</strong> Data is synced to your private iCloud container via CloudKit. Apple's iCloud infrastructure encrypts data in transit and at rest.</p>
+        <p><strong>Authentication backend:</strong> Account credentials are managed by Supabase, a SOC 2-compliant cloud platform. Passwords are hashed and never stored in plain text. Apple Sign-In uses a cryptographic token — we never receive your actual Apple ID password.</p>
+    </section>
+
+    <section>
+        <h2>Third-Party Services</h2>
+        <p>The app integrates with the following services solely to provide its core functionality:</p>
+        <ul>
+            <li><strong>Supabase</strong> — authentication and cloud database</li>
+            <li><strong>Google Sign-In</strong> — optional OAuth sign-in method</li>
+            <li><strong>Apple Sign In</strong> — optional OAuth sign-in method</li>
+            <li><strong>iCloud / CloudKit</strong> — private data sync</li>
+        </ul>
+        <p>No advertising networks, analytics platforms, or data brokers are integrated.</p>
+    </section>
+
+    <section>
+        <h2>Data Retention &amp; Deletion</h2>
+        <p>Your data is retained for as long as you have an active account. You may request deletion of your account and all associated data at any time by contacting us at the email below. On deletion:</p>
+        <ul>
+            <li>Your Supabase account and all server-side data are permanently removed</li>
+            <li>Your local Core Data store is cleared</li>
+            <li>Your iCloud sync container data is removed from your iCloud account</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Children's Privacy</h2>
+        <p>SnazzySurgeon is designed for medical students and qualified healthcare professionals. It is not directed at children under 13 (or under 16 in the EU). We do not knowingly collect personal information from children.</p>
+    </section>
+
+    <section>
+        <h2>Your Rights</h2>
+        <p>Depending on your jurisdiction you may have the right to access, correct, or erase your personal data. To exercise any of these rights, contact us at the address below and we will respond within 30 days.</p>
+    </section>
+
+    <section>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this policy from time to time. Significant changes will be communicated via an in-app notice. Continued use of the app after an update constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p>Dr. Vasu Pottabatthini<br>
+        Developer, SnazzySurgeon<br>
+        <a href="mailto:drvasu96@gmail.com">drvasu96@gmail.com</a></p>
+    </section>
+
+</main>
+
+<footer>
+    &copy; 2026 SnazzySurgeon &nbsp;·&nbsp; All rights reserved
+</footer>
+
+</body>
+</html>
